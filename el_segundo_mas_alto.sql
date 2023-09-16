@@ -39,3 +39,9 @@ WHERE colegiatura =(
 	ORDER BY colegiatura DESC
 	LIMIT 1 OFFSET 1
 );
+
+SELECT * 
+FROM platzi.alumnos
+OFFSET (
+	SELECT COUNT(id)/2 FROM platzi.alumnos
+);
