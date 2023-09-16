@@ -40,6 +40,7 @@ WHERE colegiatura =(
 	LIMIT 1 OFFSET 1
 );
 
+--reto
 SELECT * 
 FROM platzi.alumnos
 OFFSET (
