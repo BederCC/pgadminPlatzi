@@ -13,3 +13,14 @@ FROM (
 	FROM  platzi.alumnos
 ) AS alumnos_con_anio
 WHERE anio_incorporacion = 2020;
+
+--RETO
+SELECT * 
+FROM (
+	SELECT *,
+		DATE_PART('YEAR', fecha_incorporacion) AS anio_incorporacion,
+		DATE_PART('MONTH', fecha_incorporacion) AS mes_incorporacion
+	FROM  platzi.alumnos
+) AS alumnos_con_anio
+WHERE anio_incorporacion = 2018
+	AND mes_incorporacion = 5;
