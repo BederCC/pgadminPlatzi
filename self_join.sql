@@ -20,3 +20,16 @@ FROM	platzi.alumnos AS a
 GROUP BY tutor
 ORDER BY alumnos_por_tutor DESC
 LIMIT 5;
+
+/**
+  * RETO:   Encontrar el promedio de alumnos por tutor
+  */
+
+SELECT AVG(alumnos_por_tutor) promedio_alumnos_por_tutor
+FROM (
+	SELECT	CONCAT(t.nombre, ' ', t.apellido) AS tutor,
+			COUNT(*) AS alumnos_por_tutor
+	FROM	platzi.alumnos AS a
+		INNER JOIN platzi.alumnos AS t ON a.tutor_id = t.id
+	GROUP BY tutor
+) alumnos_tutor;
