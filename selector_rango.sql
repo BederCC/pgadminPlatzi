@@ -16,3 +16,7 @@ SELECT LOWER(int8range(15,25));
 SELECT int4range(10,20) * int4range(15,25);
 
 SELECT ISEMPTY(numrange(1,5));
+
+SELECT * 
+FROM platzi.alumnos
+WHERE int4range(10,20) @> tutor_id;
