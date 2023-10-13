@@ -33,3 +33,20 @@ FROM (
 		INNER JOIN platzi.alumnos AS t ON a.tutor_id = t.id
 	GROUP BY tutor
 ) alumnos_tutor;
+
+
+/**
+  * RETO:  Seleccionar los registros de ambas tablas
+  * sin importar si tienen contraparte en la otra
+  * Unión
+  */
+
+SELECT 	a.nombre,
+		a.apellido,
+		a.carrera_id,
+		c.id,
+		c.carrera
+FROM	platzi.alumnos AS a
+	FULL OUTER JOIN platzi.carreras AS c
+	ON a.carrera_id = c.id
+ORDER BY a.carrera_id DESC, c.id DESC;
