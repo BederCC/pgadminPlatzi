@@ -44,3 +44,21 @@ FROM (
 	FROM platzi.alumnos
 ) AS alumnos_with_row_num
 WHERE row_id <= 10;
+
+/**
+  * RETO:  Experimenta con rpad
+  * cual es la diferencia?
+  */
+
+-- Funcion lpad --
+SELECT rpad('sql', 15, '*');
+
+-- Lpad con incrementales --
+SELECT rpad ('sql', id, '*')
+FROM platzi.alumnos
+WHERE id < 10;
+
+-- Generar un triángulo usando Lpad --
+SELECT rpad ('*', id, '*')
+FROM platzi.alumnos
+WHERE id < 10;
